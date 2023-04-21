@@ -1,0 +1,93 @@
+"""MDScreen:
+    MDBottomNavigation:
+        MDBottomNavigationItem:
+            name:'screen 1'
+            text:'Spotify'
+            icon:'spotify'
+            #badge_icon:"numeric-10"
+            MDLabel:
+                text:'Mail'
+                halign:'center'
+        MDBottomNavigationItem:
+            name:'screen 2'
+            text:'Tracks'
+            icon:'music-circle'
+            #badge_icon:"numeric-10"
+            MDScrollView:
+                MDList:
+                    id:"container"
+
+
+
+        MDBottomNavigationItem:
+            name:'screen 2'
+            text:'Favorite'
+            icon:'account-heart'
+            #badge_icon:"numeric-10"
+            MDLabel:
+                text:'Mail'
+                halign:'center'
+        MDBottomNavigationItem:
+            name:'screen 2'
+            text:'Playlist'
+            icon:'cards'
+            #badge_icon:"numeric-10"
+            MDLabel:
+                text:'Mail'
+                halign:'center'
+        MDBottomNavigationItem:
+            name:'screen 2'
+            text:'folder'
+            icon:'folder-music'
+            #badge_icon:"numeric-10"
+            MDLabel:
+                text:'Mail'
+                halign:'center'
+            
+  """          
+
+def selected(self,selection):
+        print(selection)
+        
+    def file_chooser(self):
+        filechooser.open_file(on_selecion=self.selected)
+            
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+   def select_path(self, path: str):
+        '''
+        It will be called when you click on the file name
+        or the catalog selection button.
+        :param path: path to the selected directory or file;
+        '''
+        print("hi")
+        #self.exit_manager(self)
+        #toast(path)
+    def exit_manager(self, *args):
+        '''Called when the user reaches the root of the directory tree.'''
+        #self.manager_open = False
+        Front_page.file_manager.close()
+        print("hi")
+
+    def loop(self):
+        path = os.path.expanduser("~")
+        # path to the directory that will be opened in the file␣manager
+        Front_page.file_manager = MDFileManager(
+        exit_manager=Front_page.exit_manager, 
+        # function called when the user reaches directory␣˓→tree root
+        select_path=Front_page.select_path, # function called when selecting a file/directory
+        
+        )
+        
+        Front_page.file_manager.show(path)
+        speaker-ai account-voice/cow
+        play -account-right-drop-circle-outline
+        moon -brightness-3
+        sun-lightbulb-on-outline
+        next -chevron-double-right/skip-forward
+        previous -chevron-double-left/skip-backward
+        10secfast -fast-forward-10 /rewind-10
+        heart -heart
+        pause -play-pause/stop-circle-outline
+        list -Playlist-music-outline
+        share -share-all-outline
+        phone -phone-classic

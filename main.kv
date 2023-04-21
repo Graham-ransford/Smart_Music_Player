@@ -1,0 +1,231 @@
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+ScreenManager:   
+    Tracks_Paage:
+    MusicPlay_page:
+    Folder_page:
+    
+    
+   
+    
+    
+    
+<MusicPlay_page>:   
+    MDScreen:
+        MDBoxLayout:
+            orientation: 'vertical'
+            MDTopAppBar:
+                title: "MIDNYT :)"
+                right_action_items: [['magnify', lambda x: root.on_settings()]]
+                pos_hint: {"top": 1}
+            MDBoxLayout:
+                orientation:'vertical'
+                padding:10
+
+                MDBoxLayout:
+                    padding:50
+                    orientation: 'horizontal'
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                    
+                MDCard:
+                    orientation: 'vertical'
+                    pos_hint: {"center_x": .5, "center_y": .5} 
+                    spacing: 20
+                    padding:20
+                    size_hint_y: 12
+                    MDCard:
+                        orientation: 'vertical'
+                        pos_hint: {"center_x": .5, "center_y": .5} 
+                        size_hint: None,None
+                        height: 140
+                        md_bg_color:[4,0,0,1]
+                        width:170 
+                    MDLabel:
+                        text:"Rihana - one love" 
+                        halign:'center'
+                    MDBoxLayout:
+                        orientation:"vertical"
+                        padding:20
+                        pos_hint: {'center_x': 0.0,'center_y': 0.0}
+                    
+                    MDProgressBar:
+                        id:progress_music
+                        value:10
+                        color: app.theme_cls.accent_color  
+                        size_hint: 1, None
+                        height:12
+                        padding:20
+                        spacing:10
+                MDCard:  
+                    pos_hint: {'center_x': 0.5,'top': 1}  
+                    padding:20  
+                    id:lyric_card
+                    orientation:"vertical"
+                    size_hint_y:5
+                    md_bg_color:[4,0,0,1]
+                Widget:
+                    size_hint_y:1
+                    
+                       
+                        
+
+ 
+        
+                    
+               
+                MDCard:
+                    orientation: 'horizontal'
+                    #size_hint_y:0.2
+                    size_hint: 1, None
+                    height:45
+                    md_bg_color: [4,0,0,1]
+                    MDIconButton:
+                        icon:"currency-eth"
+                    MDIconButton:
+                        icon:"rewind-10"
+                    MDIconButton:
+                        icon:"skip-backward"
+                    MDIconButton:
+                        id:play_pause_changer
+                        icon:"play-circle"
+                        on_press:root.play_pause()
+                    MDIconButton:
+                        icon:"skip-backward"
+                    MDIconButton:
+                        icon:"fast-forward-10"
+                        
+                    MDIconButton:
+                        icon:"cached"
+                    
+                    
+                
+                
+                MDIconButton:
+                    icon: "arrow-up-drop-circle-outline"
+                    on_press: root.show_example_grid_bottom_sheet()
+                    pos_hint: {"center_x": .5, "center_y": .5}    
+                
+                    
+
+<Folder_page>:   
+    MDScreen:
+        
+        MDBottomNavigation:
+            MDBottomNavigationItem:
+                name:'screen 1'
+                text:'Spotify'
+                icon:'spotify'
+                #badge_icon:"numeric-10"
+                MDBoxLayout:
+                    orientation:"vertical"
+                    
+                    MDTopAppBar:
+                        title: "MIDNYT :)"
+                        right_action_items: [['music', lambda x: root.on_settings()]]
+                        pos_hint: {"top": 1}
+                    
+            
+            MDBottomNavigationItem:
+                name:'screen 2'
+                text:'Tracks'
+                icon:'music-circle'
+                on_tab_press:root.on_start()
+                #badge_icon:"numeric-10"
+                
+                MDBoxLayout:
+                    orientation:"vertical"
+                    
+                    MDTopAppBar:
+                        title: "MIDNYT :)"
+                        right_action_items: [['music-circle', lambda x: root.on_settings()]]
+                        pos_hint: {"top": 1}
+                    MDScrollView:
+                        MDList:
+                            id:container
+
+            MDBottomNavigationItem:
+                name:'screen 3'
+                text:'Favorite'
+                icon:'account-heart'
+                #badge_icon:"numeric-10"
+                MDLabel:
+                    text:'Mail'
+                    halign:'center'
+            MDBottomNavigationItem:
+                name:'screen 4'
+                text:'Playlist'
+                icon:'cards'
+                #badge_icon:"numeric-10"
+                MDLabel:
+                    text:'Mail'
+                    halign:'center'
+            MDBottomNavigationItem:
+                name:'screen 5'
+                text:'folder'
+                icon:'folder-music'
+                #badge_icon:"numeric-10"
+                MDLabel:
+                    text:'Mail'
+                    halign:'center'
+        
+
+<Tracks_Paage>:   
+    MDScreen:
+        
+        MDBottomNavigation:
+            MDBottomNavigationItem:
+                name:'screen 1'
+                text:'Spotify'
+                icon:'spotify'
+                #badge_icon:"numeric-10"
+                MDBoxLayout:
+                    orientation:"vertical"
+                    
+                    MDTopAppBar:
+                        title: "MIDNYT :)"
+                        right_action_items: [['music', lambda x: root.on_settings()]]
+                        pos_hint: {"top": 1}
+                    
+            
+            MDBottomNavigationItem:
+                name:'screen 2'
+                text:'Tracks'
+                icon:'music-circle'
+                on_tab_press:root.on_start()
+                #badge_icon:"numeric-10"
+                
+                MDBoxLayout:
+                    orientation:"vertical"
+                    
+                    MDTopAppBar:
+                        title: "MIDNYT :)"
+                        right_action_items: [['music-circle', lambda x: root.on_settings()]]
+                        pos_hint: {"top": 1}
+                    MDScrollView:
+                        MDList:
+                            id:container
+
+            MDBottomNavigationItem:
+                name:'screen 3'
+                text:'Favorite'
+                icon:'account-heart'
+                #badge_icon:"numeric-10"
+                MDLabel:
+                    text:'Mail'
+                    halign:'center'
+            MDBottomNavigationItem:
+                name:'screen 4'
+                text:'Playlist'
+                icon:'cards'
+                #badge_icon:"numeric-10"
+                MDLabel:
+                    text:'Mail'
+                    halign:'center'
+            MDBottomNavigationItem:
+                name:'screen 5'
+                text:'folder'
+                icon:'folder-music'
+                #badge_icon:"numeric-10"
+                MDLabel:
+                    text:'Mail'
+                    halign:'center'
